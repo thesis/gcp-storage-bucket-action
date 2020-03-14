@@ -16,7 +16,7 @@ if [[ -n $TEST ]]; then
 fi
 
 # Decode Base64-key to json file
-echo "$INPUT_SERVICE_KEY" | base64 --decode > "$HOME"/service_key.json
+echo "$INPUT_SERVICE_KEY" | base64 -d > "$HOME"/service_key.json
 
 gcloud auth activate-service-account --key-file="$HOME"/service_key.json --project "$INPUT_PROJECT"
 
