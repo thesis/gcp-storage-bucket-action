@@ -1,5 +1,5 @@
-FROM google/cloud-sdk
+FROM google/cloud-sdk:alpine
 
 COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["sh", "/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
