@@ -16,3 +16,5 @@ jobs:
         service-key: test-service-key
         project: test-project
         bucket-name: test-bucket-name
+      env:
+        TEST: test-service-key test-project test-bucket-name . index.html 404.html
