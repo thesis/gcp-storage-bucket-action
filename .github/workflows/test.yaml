@@ -10,11 +10,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Deploy to GCP
+    - name: Test GCP Deploy
       uses: ./
       with:
         service-key: test-service-key
         project: test-project
         bucket-name: test-bucket-name
       env:
-        TEST: test-service-key test-project test-bucket-name . index.html 404.html
+        TEST: 'sk: test-service-key p: test-project bn: test-bucket-name bp: . bf: . hpp: index.html epp: 404.html'

@@ -18,6 +18,13 @@ inputs:
   bucket-name:
     description: Bucket name
     required: true
+  bucket-path:
+    description: >
+      > The path in the bucket you want to deploy to. Default is empty. You can
+      > change this value if you want to deploy the build-folder contents to
+      > something other than the bucket root.
+    required: false
+    default: .
   build-folder:
     description: >
       > The folder you want to deploy. Default is the repository. You can
@@ -40,6 +47,7 @@ runs:
     - ${{ inputs.service-key }}
     - ${{ inputs.project }}
     - ${{ inputs.bucket-name }}
+    - ${{ inputs.bucket-path }}
     - ${{ inputs.build-folder }}
     - ${{ inputs.home-page-path }}
     - ${{ inputs.error-page-path }}
