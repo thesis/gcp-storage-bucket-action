@@ -24,7 +24,7 @@ inputs:
       > change this value if you want to deploy the build-folder contents to
       > something other than the bucket root.
     required: false
-    default: ''
+    default: .
   build-folder:
     description: >
       > The folder you want to deploy. Default is the repository. You can
@@ -32,12 +32,22 @@ inputs:
       > folder.
     required: false
     default: .
+  set-website:
+    desription: >
+      > Set to "true" if you want website settings like home-page-path and
+      > error-page-path applied to the bucket. Leave out otherwise. Note that
+      > you must set this to "true" if you want home-page-path and
+      > error-page-path to take effect; otherwise, they will be ignored.
+    required: false
+    default: 'false'
   home-page-path:
-    description: Path of your homepage in cloud storage bucket.
+    description: >
+      > Path of your homepage in cloud storage bucket. Set set-website as well to use this.
     required: false
     default: index.html
   error-page-path:
-    description: Path of the 404 page to be shown.
+    description: >
+      > Path of the 404 page to be shown. Set set-website as well to use this.
     required: false
     default: 404.html
 runs:
@@ -49,5 +59,6 @@ runs:
     - ${{ inputs.bucket-name }}
     - ${{ inputs.bucket-path }}
     - ${{ inputs.build-folder }}
+    - ${{ inputs.set-website }}
     - ${{ inputs.home-page-path }}
     - ${{ inputs.error-page-path }}
