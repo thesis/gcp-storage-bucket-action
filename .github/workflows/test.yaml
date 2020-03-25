@@ -17,4 +17,4 @@ jobs:
         project: test-project
         bucket-name: test-bucket-name
       env:
-        TEST: 'sk: test-service-key p: test-project bn: test-bucket-name bp: . bf: . hpp: index.html epp: 404.html'
+        TEST: 'sk: test-service-key p: test-project bn: test-bucket-name bp: . bf: . sw: false hpp: index.html epp: 404.html'
