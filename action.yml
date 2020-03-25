@@ -24,7 +24,7 @@ inputs:
       > change this value if you want to deploy the build-folder contents to
       > something other than the bucket root.
     required: false
-    default: .
+    default: ''
   build-folder:
     description: >
       > The folder you want to deploy. Default is the repository. You can
